@@ -1,27 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Dashboard from './Dashboard';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-// import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Redirect, Switch, Route } from "react-router-dom";
+
+import Login from './components/Login.js'
+import Dashboard from './components/Dashboard.js'
+
+const App = () => {
+	return (
+		<Router>
+			<Switch>
+				<Route path="/dashboard">
+					<Dashboard/>
+				</Route>
+				<Route path="/login">
+					<Login/>
+				</Route>
+				<Redirect from='/' to="/login" />
+			</Switch>
+		</Router>
+	)
+}
 
 ReactDOM.render(
-	<Router>
-		<Switch>
-			<Route exact path="/">
-				<App/>
-			</Route>
-			<Route path="/dashboard">
-				<Dashboard/>
-			</Route>
-		</Switch>
-	</Router>,
+	<App/>,
 	document.getElementById('root')
 );
-
 // serviceWorker.unregister();
