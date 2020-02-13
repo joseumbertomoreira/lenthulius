@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Redirect, Switch, Route } from "react-router-dom";
 
-import Login from './components/Login.js'
-import Dashboard from './components/Dashboard.js'
+import Login from './components/Login'
+// import Dashboard from './components/Dashboard.js.js'
 
 const App = () => {
 	return (
 		<Router>
 			<Switch>
 				<Route path="/dashboard">
-					<Dashboard/>
+					
 				</Route>
 				<Route path="/login">
 					<Login/>
