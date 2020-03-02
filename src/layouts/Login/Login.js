@@ -40,6 +40,7 @@ const Login = props => {
 	}
 	
 	let httpLoginRequest = (event) => {
+		// Usar
 		history.push("/dashboard")
   	event.preventDefault();
 	}

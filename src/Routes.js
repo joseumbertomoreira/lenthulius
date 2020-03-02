@@ -2,10 +2,15 @@ import React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 
 import { RouteWithLayout } from './components';
-import { Login as LoginLayout } from './layouts';
+import { 
+	Login as LoginLayout,
+	Main as MainLayout
+} from './layouts';
 
 import {
 	Dashboard as DashboardView,
+	ProductList as ProductListView,
+  UserList as UserListView,
 } from './views';
 
 const Routes = () => {
@@ -26,8 +31,20 @@ const Routes = () => {
 			<RouteWithLayout
 				component={DashboardView}
         exact
-        layout={LoginLayout}
-        path="/login"
+        layout={MainLayout}
+        path="/dashboard"
+			/>
+			<RouteWithLayout
+				component={ProductListView}
+        exact
+        layout={MainLayout}
+        path="/users"
+			/>
+			<RouteWithLayout
+				component={UserListView}
+        exact
+        layout={MainLayout}
+        path="/products"
 			/>
 		</Switch>
 	)
