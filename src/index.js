@@ -1,27 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Redirect, Switch, Route } from "react-router-dom";
+import App from './App';
 
-import Login from './components/Login/Login'
-import Navbar from './components/Navbar/Navbar'
+ReactDOM.render(<App />, document.getElementById('root'));
 
-const App = () => {
-	return (
-		<Router>
-			<Switch>
-				<Route path="/dashboard">
-					<Navbar/>
-				</Route>
-				<Route path="/login">
-					<Login/>
-				</Route>
-				<Redirect from='/' to="/login" />
-			</Switch>
-		</Router>
-	)
-}
-
-ReactDOM.render(
-	<App/>,
-	document.getElementById('root')
-);
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA

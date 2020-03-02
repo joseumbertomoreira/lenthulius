@@ -9,11 +9,27 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-import Style from './style'
+import { makeStyles } from '@material-ui/core/styles';
 
-const Login = () => {
+const useStyles = makeStyles(theme => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
 
-	const classes = Style();
+const Login = props => {
+
+	const classes = useStyles();
 	const history = useHistory();
 
 	const [user, setUser] = useState('');
@@ -30,7 +46,6 @@ const Login = () => {
 	
 	useEffect(() => {
     // Atualiza o título do documento utilizando a API do navegador
-    console.log("OIOIOIOI")
   });
 
 	return (
